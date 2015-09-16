@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: bestuser
+  text: Comment 1! First!
+  post: one
+
+two:
+  author: MyString
+  text: Neat! have an upvote
+  post: one
+
+three:
+  author: testuser
+  text: this is a bad post
+  post: two
