@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :autho, except: [:show, :index]
+  before_filter :authenticate_user!
+  load_and_authorize_resource
 
   def create
     @post = Post.new(params.require(:post).permit(:title, :text))
@@ -60,5 +63,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :text)
     end
 
-
+    def autho
+      authorize! if can? :update, @post
+    end
 end

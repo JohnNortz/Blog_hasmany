@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_post, only: [:index, :show, :create, :new, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   def index
     @comments = @post.comments

@@ -15,11 +15,9 @@
         <td><%= comment.author %></td>
         <td><%= comment.text %></td>
 
-        <!-- /posts/:post_id/comments/:id -->
         <td><%= link_to 'Show', [comment.post, comment] %></td>
-        <!-- /posts/:post_id/comments/:id/edit -->
         <td><%= link_to 'Edit', edit_post_comment_path(comment.post, comment)%></td>
-        <!-- /posts/:post_id/comments/:id -->
+
         <td><%= link_to 'Destroy', [comment.post, comment], :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
     <% end %>
